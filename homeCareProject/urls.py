@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from homeCareApp import views
+from homeCareApp.views.usuarioCreateView import usercreateview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,10 +24,11 @@ urlpatterns = [
     path('usuario/<int:pk>/', views.usuarioView.UsuarioRetrieveUpdateDeleteView.as_view()),
     path('medico/', views.medicoView.MedicoListCreateView.as_view()),
     path('medico/<int:pk>/', views.medicoView.MedicoRetrieveUpdateView.as_view()),
-    path('paciente/', views.pacienteView.MedicoListCreateView.as_view()),
-    path('paciente/<int:pk>/', views.pacienteView.MedicoRetrieveUpdateView.as_view()),
-    path('familiar/', views.familiarView.MedicoListCreateView.as_view()),
-    path('familiar/<int:pk>/', views.familiarView.MedicoRetrieveUpdateView.as_view()),
-    path('enfermero/', views.enfermeroView.MedicoListCreateView.as_view()),
-    path('enfermero/<int:pk>/', views.enfermeroView.MedicoRetrieveUpdateView.as_view()),
+    path('paciente/', views.createpaciente),
+    path('paciente/<int:pk>/', views.detailpaciente),
+    path('familiar/', views.familiarView.FamiliarListCreateView.as_view()),
+    path('familiar/<int:pk>/', views.familiarView.FamiliarRetrieveUpdateView.as_view()),
+    path('enfermero/', views.enfermeroView.EnfermeroListCreateView.as_view()),
+    path('enfermero/<int:pk>/', views.enfermeroView.EnfermeroRetrieveUpdateView.as_view()),
+    path('usuariologin/', views.usercreateview.as_view()),
 ]
