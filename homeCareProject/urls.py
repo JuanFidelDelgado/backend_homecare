@@ -19,8 +19,14 @@ from homeCareApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', views.userView.UsuarioListView.as_view()),
-    path('user/<int:pk>/', views.userView.UsuarioRetrieveUpdateDeleteView.as_view()),
-    path('medico/', views.medicoView.MedicoListView.as_view()),
-    path('medico/<int:pk>/', views.medicoView.MedicoRetrieveUpdateDeleteView.as_view()),
+    path('usuario/', views.usuarioView.UsuarioListView.as_view()),
+    path('usuario/<int:pk>/', views.usuarioView.UsuarioRetrieveUpdateDeleteView.as_view()),
+    path('medico/', views.medicoView.MedicoListCreateView.as_view()),
+    path('medico/<int:pk>/', views.medicoView.MedicoRetrieveUpdateView.as_view()),
+    path('paciente/', views.pacienteView.MedicoListCreateView.as_view()),
+    path('paciente/<int:pk>/', views.pacienteView.MedicoRetrieveUpdateView.as_view()),
+    path('familiar/', views.familiarView.MedicoListCreateView.as_view()),
+    path('familiar/<int:pk>/', views.familiarView.MedicoRetrieveUpdateView.as_view()),
+    path('enfermero/', views.enfermeroView.MedicoListCreateView.as_view()),
+    path('enfermero/<int:pk>/', views.enfermeroView.MedicoRetrieveUpdateView.as_view()),
 ]

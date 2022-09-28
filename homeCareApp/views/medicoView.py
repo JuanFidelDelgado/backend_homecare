@@ -18,12 +18,12 @@ class MedicoListCreateView(generics.ListCreateAPIView):
 
     def post(self, request, *args, **kwargs):
         print("POST a Medico")
-        usuarioData = request.data.pop('usuario')
-        serializerU  = UsuarioSerializer(data=usuarioData)
-        serializerU.is_valid(raise_exception=True)
-        usuario = serializerU.save()
-        enfData = request.data   
-        enfData.update({"usuario":usuario.id})
+        usuarioData = request.data.pop('usuario')           #extrae la información del diccionario que está en la llave usuario
+        serializerU  = UsuarioSerializer(data=usuarioData)  #llama al serializador de usuario y le envio los datos
+        serializerU.is_valid(raise_exception=True)          #valida que los datos sean válidos
+        usuario = serializerU.save()                        #guarda la información en la base de datos
+        enfData = request.data                              #aqui están los datos que quedaron en el diccionario para construir el objeto de medico
+        enfData.update({"usuarioMedico":usuario.id})
         serializerEnf = MedicoSerializer(data=enfData)
         serializerEnf.is_valid(raise_exception=True)
         serializerEnf.save()

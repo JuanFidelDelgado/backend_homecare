@@ -18,7 +18,7 @@ class UsuarioListView(generics.ListAPIView):
 class UsuarioRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
-    lookup_field = "id"             # campo con el que se realiza la búsqueda de los objetos
+    lookup_field = "id"             # campo con el que se realiza la búsqueda de los objetos, así se llama la clave primaria de la tabla usuario
     lookup_url_kwarg = 'pk'         # nombre dado en la url al argumento
     #permission_classes = (IsAuthenticated,)
 

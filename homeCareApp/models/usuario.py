@@ -33,7 +33,6 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     latitud = models.CharField('Latitud', max_length=50)
     longitud = models.CharField('Longitud', max_length=50)
     
-    
     username = models.CharField('Username', max_length = 20, unique=True)
     password = models.CharField('Password', max_length = 256)
     
