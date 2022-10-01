@@ -1,0 +1,5 @@
+from .medicoSerializer import MedicoSerializer
+from .usuarioSerializer import UsuarioSerializer
+from .familiarSerializer import FamiliarSerializer
+from .enfermeroSerializer import EnfermeroSerializer
+from .pacienteSerializer import PacienteSerializer
