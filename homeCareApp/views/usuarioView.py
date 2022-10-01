@@ -9,7 +9,7 @@ class UsuarioListView(generics.ListAPIView):
     serializer_class = UsuarioSerializer
     #permission_classes = (IsAuthenticated,)
 
-    def list(self, request):
+    def list(self, request):        
         print("GET a todos los Usuario")
         queryset = self.get_queryset()
         serializer = UsuarioSerializer(queryset, many=True)
