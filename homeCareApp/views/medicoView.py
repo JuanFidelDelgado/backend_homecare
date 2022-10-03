@@ -1,6 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
-#from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from homeCareApp.serializers.medicoSerializer import MedicoSerializer
 from homeCareApp.serializers.usuarioSerializer import UsuarioSerializer
 from homeCareApp.models.medico import Medico
@@ -29,13 +30,13 @@ class MedicoListCreateView(generics.ListCreateAPIView):
         serializerEnf.save()
         return Response(status=status.HTTP_201_CREATED)
 
-        """ tokenData = {
-                     "username":request.data["username"],
-                     "password":request.data["password"]
-                    }
+        tokenData = {
+            "username":request.data["username"],
+            "password":request.data["password"]
+        }
         tokenSerializer = TokenObtainPairSerializer(data=tokenData)
         tokenSerializer.is_valid(raise_exception=True)
-        return Response(tokenSerializer.validated_data, status=status.HTTP_201_CREATED) """
+        return Response(tokenSerializer.validated_data, status=status.HTTP_201_CREATED)
 
 class MedicoRetrieveUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Medico.objects.all()
@@ -46,14 +47,14 @@ class MedicoRetrieveUpdateView(generics.RetrieveUpdateAPIView):
 
     def get(self, request, *args, **kwargs):
         print("GET a Medico")
-        """ if valid_data['user_id'] != kwargs['pk']:
+        """if valid_data['id'] != kwargs['pk']:
             stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED) """
+            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)"""
         return super().get(request, *args, **kwargs)
 
     def put(self, request, *args, **kwargs):
         print("PUT a Medico")
-        """ if valid_data['user_id'] != kwargs['pk']:
+        """if valid_data['id'] != kwargs['pk']:
             stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED) """
+            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)"""
         return super().put(request, *args, **kwargs)

@@ -31,4 +31,5 @@ urlpatterns = [
     path('enfermero/', views.enfermeroView.EnfermeroListCreateView.as_view()),
     path('enfermero/<int:pk>/', views.enfermeroView.EnfermeroRetrieveUpdateView.as_view()),
     path('usuariologin/', views.usercreateview.as_view()),
+    path('historia/', views.historiaView.HistoriaListCreateView.as_view())  
 ]

@@ -1,7 +1,10 @@
+from email.policy import default
 from django.db import models
+from .usuario import Usuario
 
 class HistoriaClinica(models.Model):
     id = models.AutoField(primary_key=True)
+    usuarioPaciente = models.ForeignKey(Usuario, related_name='historiaClinica', on_delete=models.CASCADE, default=0)
     oximetria = models.FloatField('Oximetria', default=0)
     fCardiaca = models.FloatField('FCardiaca', default=0)
     fRespiratoria = models.FloatField('FRespiratoria', default=0)
