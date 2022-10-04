@@ -4,4 +4,4 @@ from homeCareApp.models.paciente import Paciente
 class PacienteSerializer(serializers.ModelSerializer):
     class Meta:
         model= Paciente
-        fields= ['id', 'usuarioPaciente', 'usuarioMedico', 'usuarioEnfermero', 'usuarioFamiliar', 'historiaClinica']
+        fields= ['id', 'usuarioPaciente', 'usuarioMedico', 'usuarioEnfermero', 'usuarioFamiliar']

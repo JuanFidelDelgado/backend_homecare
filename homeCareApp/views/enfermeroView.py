@@ -1,6 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
-#from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from homeCareApp.serializers.enfermeroSerializer import EnfermeroSerializer
 from homeCareApp.serializers.usuarioSerializer import UsuarioSerializer
 from homeCareApp.models.enfermero import Enfermero

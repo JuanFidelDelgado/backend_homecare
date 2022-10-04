@@ -24,12 +24,14 @@ urlpatterns = [
     path('usuario/<int:pk>/', views.usuarioView.UsuarioRetrieveUpdateDeleteView.as_view()),
     path('medico/', views.medicoView.MedicoListCreateView.as_view()),
     path('medico/<int:pk>/', views.medicoView.MedicoRetrieveUpdateView.as_view()),
-    path('paciente/', views.createpaciente),
-    path('paciente/<int:pk>/', views.detailpaciente),
+    path('paciente/', views.pacienteView.PacienteListCreateView.as_view()),
+    path('paciente/<int:pk>/', views.pacienteView.PacienteRetrieveUpdateView.as_view()),
+    #path('paciente/', views.createpaciente),
+    #path('paciente/<int:pk>/', views.detailpaciente),
     path('familiar/', views.familiarView.FamiliarListCreateView.as_view()),
     path('familiar/<int:pk>/', views.familiarView.FamiliarRetrieveUpdateView.as_view()),
     path('enfermero/', views.enfermeroView.EnfermeroListCreateView.as_view()),
     path('enfermero/<int:pk>/', views.enfermeroView.EnfermeroRetrieveUpdateView.as_view()),
-    path('usuariologin/', views.usercreateview.as_view()),
+    #path('usuariologin/', views.usercreateview.as_view()),
     path('historia/', views.historiaView.HistoriaListCreateView.as_view())  
 ]
